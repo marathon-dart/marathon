@@ -35,9 +35,15 @@ import "package:marathon/marathon_base.dart";
 import "service.dart";
 
 void main (List<String> args) async {
-  var router = Router(); // defined in shelf_router
-  router.register(EchoService()); // extension method from Marathon, that (using reflection?) adds routes from EchoService to shelf_router.
-  await io.serve(router.handler, 'localhost', 8080); // defined in shelf
+  // defined in shelf_router
+  var router = Router(); 
+  
+  // extension method from Marathon, that (using reflection?) adds 
+  // routes from EchoService to shelf_router.
+  router.register(EchoService()); 
+  
+  // defined in shelf
+  await io.serve(router.handler, 'localhost', 8080); 
 }
 ```
 
@@ -45,13 +51,18 @@ void main (List<String> args) async {
 // in service.dart
 import "package:marathon/marathon_base.dart";
 
-class EchoService extends PathHandler { // PathHandler is defined in marathon
-  String get basePath => "/echo"; // This handler will handle requests starting with /echo
+// PathHandler is defined in marathon
+class EchoService extends PathHandler { 
+  // This handler will handle requests starting with /echo
+  String get basePath => "/echo"; 
   
-  // ResponseFunction is a convenience typedef for Response Function(Request).
+  // ResponseFunction is a convenience 
+  // typedef for Response Function(Request).
   //
-  // Marathon.handler is our "hook" here. We can override/replace it downstream to
-  // inject resources, such as session id's, authenticated data, ORMs, whatever.
+  // Marathon.handler is our "hook" here. We 
+  // can override/replace it downstream to
+  // inject resources, such as session id's, 
+  // authentication data, ORMs, whatever.
   ResponseFunction get name => Marathon.handler("/<name>", (Request r, String name) {
     return Response.ok('echo $name'); 
   } 

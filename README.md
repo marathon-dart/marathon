@@ -1,4 +1,14 @@
-[![Marathon Header](https://github.com/marathon-dart/marathon/blob/main/resources/logos/png/Horizontal%20(Full-color).png)](https://github.com/marathon-dart/marathon)
+<!-- header -->
+</br>
+</br>
+</br>
+<p align="center">
+<img src="https://github.com/marathon-dart/marathon/blob/main/resources/logos/png/Horizontal%20(Full-color).png" width="80%" alt="Marathon Header"/>
+</p>
+</br>
+</br>
+</br>
+<!-- end header -->
 
 A framework and collection of packages for writing http servers, built on top of the shelf package.
 

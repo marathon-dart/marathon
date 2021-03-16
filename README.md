@@ -1,3 +1,5 @@
+[![Marathon Header](https://github.com/marathon-dart/marathon/blob/main/resources/logos/png/Avatar%20(Full-color).png)](https://github.com/marathon-dart/marathon)
+
 A framework and collection of packages for writing http servers, built on top of the shelf package.
 
 This framework is intended to reduce the technical debt associated with server-side Dart

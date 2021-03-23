@@ -16,9 +16,9 @@ This framework is intended to reduce the technical debt associated with server-s
 by relying on existing utilities where possible, and filling in the gaps with original code
 and syntactic sugar where necessary.
 
-This repository has an experimental version of the Marathon routing system right now, and nothing else.
-All code is subject to change and has not been tested thoroughly. Please see /example/ for a rudimentary
-project.
+This repository is a monorepo. The Marathon "framework" is a collection of modules on top of the shelf
+library. Each of these modules has its own subfolder in the `packages` folder. See the docs if you are
+unsure about how to get started.
 
 ## Specification
 

@@ -14,3 +14,7 @@ doc/api/
 
 # IntelliJ
 .idea/
+
+# Melos
+melos_marathon.iml
+packages/*/*.iml

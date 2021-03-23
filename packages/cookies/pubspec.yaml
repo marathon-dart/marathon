@@ -1,0 +1,15 @@
+name: marathon_cookies
+version: 0.1.1
+description: >-
+  Cookie parser middleware for the Shelf ecosystem.
+  Reads cookies in request, sets cookies in response.
+homepage: https://github.com/marathon-dart/marathon-cookies
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  marathon: ^0.1.1
+
+dev_dependencies:
+  test: ^1.6.2

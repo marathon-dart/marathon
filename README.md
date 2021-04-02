@@ -20,9 +20,9 @@ This repository is a monorepo. The Marathon "framework" is a collection of modul
 library. Each of these modules has its own subfolder in the `packages` folder. See the docs if you are
 unsure about how to get started.
 
-## Specification
+## Documentation
 
-A (WIP) spec is available at: https://marathon-1.gitbook.io/marathon/
+Docs available at: https://marathon-dart.github.io/marathon-docs/
 
 ## Features and bugs
 

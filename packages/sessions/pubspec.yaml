@@ -9,6 +9,7 @@ environment:
 dependencies:
   marathon: 0.1.1
   marathon_cookies: 0.1.1
+  marathon_models: 0.1.1
 
 dev_dependencies:
   pedantic: ^1.11.0

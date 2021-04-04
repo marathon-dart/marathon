@@ -1,18 +1,18 @@
 abstract class BaseUser {
-  String _username;
-  String _email;
-  String _firstName;
-  String _password; // Passwords would hashed and stored.
-  String _lastName;
-  DateTime _lastLogin;
-  bool _isAnonymous;
-  DateTime _registered;
+  late String _username;
+  String? _email;
+  String? _firstName;
+  late String _password; // Passwords would hashed and stored.
+  String? _lastName;
+  DateTime? _lastLogin;
+  late bool _isAnonymous;
+  late DateTime _registered;
 
   String get username;
-  String get firsName;
-  String get fullName;
-  String get email;
-  DateTime get lastLogin;
+  String? get firstName;
+  String? get fullName;
+  String? get email;
+  DateTime? get lastLogin;
   DateTime get registed;
   bool get isAnonymous;
 
@@ -22,18 +22,26 @@ abstract class BaseUser {
 class User extends BaseUser {
   @override
   String get username => _username;
+
   @override
-  String get firsName => _firstName;
+  String? get email => _email;
   @override
-  String get fullName => '$_firstName _$_lastName';
+  String? get firstName => _firstName;
   @override
-  String get email => _email;
+  String? get fullName {
+    _lastName ??= ' ';
+    if (_firstName == null) {
+      return null;
+    }
+    return '$_firstName + $_lastName';
+  }
+
   @override
-  DateTime get lastLogin => _lastLogin;
+  DateTime? get lastLogin => _lastLogin;
   @override
   DateTime get registed => _registered;
   @override
-  bool get isAnonymous => false;
+  bool get isAnonymous => _isAnonymous;
 
   @override
   bool verifyUser(String password) {
@@ -45,7 +53,7 @@ class AnonymousUser extends BaseUser {
   @override
   String get email => throw AnonymousUserError();
   @override
-  String get firsName => throw AnonymousUserError();
+  String get firstName => throw AnonymousUserError();
   @override
   String get fullName => throw AnonymousUserError();
   @override
@@ -55,7 +63,7 @@ class AnonymousUser extends BaseUser {
   @override
   String get username => throw AnonymousUserError();
   @override
-  bool get isAnonymous => true;
+  bool get isAnonymous => _isAnonymous;
   @override
   bool verifyUser(String password) {
     throw AnonymousUserError();
@@ -63,7 +71,7 @@ class AnonymousUser extends BaseUser {
 }
 
 class AnonymousUserError extends Error {
-  final String message;
+  final String? message;
   AnonymousUserError([this.message]);
   @override
   String toString() {
